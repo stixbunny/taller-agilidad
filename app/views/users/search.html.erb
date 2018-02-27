@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="card" style="width: 20rem; margin: 0 auto; float: none">
+    <img src="<%= @user.picture %>" alt="Imagen Topísima">
+    <div class="card-block">
+      <p class="card-title" style="text-align: center"><%= @user.email %></p>
+      <p class="card-text" style="text-align: center"><%= @user.bio %></p>
+      <%= link_to "♥", interactions_path(like: true, user_two_id: @user.id), method: :post, class: "btn btn-success" %>
+      <%= link_to "✖", interactions_path(like: false, user_two_id: @user.id), method: :post, class: "btn btn-danger" %>
+      <!-- <form action="<%= interactions_path(like: true, user_two_id: @user.id) %>" method="post">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <button class="btn btn-success" style="display: inline-block; width: full" name="button"><span class="glyphicon glyphicon-heart">♥</span></button>
+      </form>
+      <form action="<%= interactions_path(like: false, user_two_id: @user.id) %>" method="post">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <button class="btn btn-danger" style="display: inline-block; width: full" name="button"><span class="glyphicon glyphicon-remove">✖</span></button>
+      </form> -->
+    </div>
+  </div>
+</div>
